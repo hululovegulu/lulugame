@@ -96,32 +96,41 @@ const RULES=[
 '本日四处主调查选两处；另有一次三选一深访。阅读、回看资料、打开菜单和存档不耗调查时段，也不会触发现实倒计时。'
 ];
 const EVIDENCE={
- letter:{name:'邀请函背面',source:'入院时，主角持有',text:'“名单不止一份。你毁掉的，只是带回家的那一页。”\n这是邀请函上的字，不等于写信的人已经证明了全部事实。'},
- phone:{name:'未发出的消息与巡查告示',source:'手机记录／到院前拍摄',text:'司机说回程路已经封了；接驳车回不来。候车点贴着沿岸巡查告示，电话号码被雨浸得模糊。\n这表明外部巡查存在，不能证明电话附房已经可用。'},
- map:{name:'旧分区图',source:'许达与顾秋生共同试门后带回',text:'公共区与病房翼画在不同页。电话附房标在院墙外侧，修订页缺失。\n现阶段没有走过维修路线，不能直接导航过去。'},
- sheet:{name:'转运副页',source:'档案室／亲眼查看',text:'登记副页：顾原（划去）→ 沈禾（补入）。\n登记签名：林秀。右下角有复写浅痕。\n主角认得母亲的笔迹；不能仅凭名字改动复原全部经过。'},
- observation:{name:'伤员观察记录',source:'档案室／亲眼查看',text:'“顾原：神志清楚。转运条件待复核。”\n此页早于最终名单，可以质疑“毫无希望”的说法，却不能单独证明当时一定能成功转运。'},
- drawer:{name:'半开抽屉',source:'档案室／现场观察',text:'文件排列中空出一掌宽的位置。\n只能确定有材料不在这里，不能确定何时、由谁拿走。'},
- testimony:{name:'许达的证词',source:'走廊长椅／许达本人陈述',text:'他说自己收过钱，给人挪过位置；后来折返，看见顾原还能应人。林秀把孩子送上船，和他一起往回走。\n他没有声称知道林秀内心如何想；他说水上来时自己没拉住谁。'},
- medicine:{name:'周宁的回应',source:'医疗角／私人谈话',text:'她知道父亲会怎样给人看病，但不愿在知道具体事实之前先表态。\n父女关系不等于她替父亲知道或承担全部事情。'},
- lock:{name:'门边的新漆',source:'走廊尽头／现场检查',text:'外门有近期维护痕迹；旧钥匙未能打开。窗外积水流动明显，呼救、推门和发送消息均未解决困境。\n谁换了锁、维修通道能否通过，尚未证实。'},
- direction:{name:'维修通道方位',source:'顾秋生指示／尚未实探',text:'旧维修通道的入口在院墙另一侧。已记下顾指示的相对方向；没有据此确认可以安全通过。'},
- seal:{name:'首夜封门',source:'主角目击及门外声音',text:'第一批进房的人确实出来过。第二次零散取物时，周宁从01回到04，主角最后进入02。\n唐岚一直在公共侧。封门后，她说门外也拉不开，公共窗无人回应。完整夜间行踪不是主角亲眼所见。'},
- wall:{name:'隔墙的回应',source:'02房／亲耳听见',text:'三号房的许达敲了两下墙，并得到主角回应。\n没有精确死亡时间，也不能据此认定后续一直安全。'}
+ letter:{name:'邀请函背面',source:'入院时，主角持有',text:'“名单不止一份。你毁掉的，只是带回家的那一页。”\n留言没有署名。'},
+ phone:{name:'未发出的消息与巡查告示',source:'手机记录／到院前拍摄',text:'司机说回程路已经封了，接驳车回不来。候车点的巡查告示被雨浸糊，号码辨认不清。'},
+ map:{name:'旧分区图',source:'许达与顾秋生共同试门后带回',text:'公共区与病房翼画在不同页；电话附房在院墙外侧。修订页缺失，维修通道还没实地确认。'},
+ sheet:{name:'转运副页',source:'档案室／亲眼查看',text:'登记副页：顾原被划去，沈禾补入。签名是林秀，右下角留有复写浅痕。\n你认得母亲的笔迹，却不知道她为什么改名。'},
+ observation:{name:'伤员观察记录',source:'档案室／亲眼查看',text:'“顾原：神志清楚。转运条件待复核。”\n记录早于最终名单。“毫无希望”因此不再那么确定，但后来病情如何，仍无从得知。'},
+ drawer:{name:'半开抽屉',source:'档案室／现场观察',text:'文件排列中空出一掌宽的位置。有材料不在这里，去向不明。'},
+ testimony:{name:'许达的证词',source:'走廊长椅／许达本人陈述',text:'他说自己收过钱，替人挪过位置；后来折返，看见顾原还能应人。林秀把孩子送上船，和他一起往回走。\n许达不知道林秀当时怎么想。水涨起来时，他没能拉住谁。'},
+ medicine:{name:'周宁的回应',source:'医疗角／私人谈话',text:'她了解父亲如何救人，却拒绝在事实未明前替他表态。'},
+ lock:{name:'门边的新漆',source:'走廊尽头／现场检查',text:'门边的新漆尚未干，旧钥匙打不开。推门、呼救和发消息都没有用。换锁的人、维修通道能否通过，都还未知。'},
+ direction:{name:'维修通道方位',source:'顾秋生指示／尚未实探',text:'顾秋生指向院墙另一侧的旧维修通道。只是方位，还没走过。'},
+ seal:{name:'首夜封门',source:'主角目击及门外声音',text:'封门前，你目送第一批人进出；零散取物时，周宁从01返回04，你最后回到02。\n封门后，唐岚说公共侧也打不开，窗外无人回应。其余人的夜间行踪，你没看全。'},
+ wall:{name:'隔墙的回应',source:'02房／亲耳听见',text:'03号房的许达敲墙，你回应了。之后过了多久，没人能确定。'}
+};
+const LEGACY_EVIDENCE_TEXT={
+ letter:'“名单不止一份。你毁掉的，只是带回家的那一页。”\n这是邀请函上的字，不等于写信的人已经证明了全部事实。',
+ phone:'司机说回程路已经封了；接驳车回不来。候车点贴着沿岸巡查告示，电话号码被雨浸得模糊。\n这表明外部巡查存在，不能证明电话附房已经可用。',
+ map:'公共区与病房翼画在不同页。电话附房标在院墙外侧，修订页缺失。\n现阶段没有走过维修路线，不能直接导航过去。',
+ sheet:'登记副页：顾原（划去）→ 沈禾（补入）。\n登记签名：林秀。右下角有复写浅痕。\n主角认得母亲的笔迹；不能仅凭名字改动复原全部经过。',
+ observation:'“顾原：神志清楚。转运条件待复核。”\n此页早于最终名单，可以质疑“毫无希望”的说法，却不能单独证明当时一定能成功转运。',
+ drawer:'文件排列中空出一掌宽的位置。\n只能确定有材料不在这里，不能确定何时、由谁拿走。',
+ testimony:'他说自己收过钱，给人挪过位置；后来折返，看见顾原还能应人。林秀把孩子送上船，和他一起往回走。\n他没有声称知道林秀内心如何想；他说水上来时自己没拉住谁。',
+ medicine:'她知道父亲会怎样给人看病，但不愿在知道具体事实之前先表态。\n父女关系不等于她替父亲知道或承担全部事情。',
+ lock:'外门有近期维护痕迹；旧钥匙未能打开。窗外积水流动明显，呼救、推门和发送消息均未解决困境。\n谁换了锁、维修通道能否通过，尚未证实。',
+ direction:'旧维修通道的入口在院墙另一侧。已记下顾指示的相对方向；没有据此确认可以安全通过。',
+ seal:'第一批进房的人确实出来过。第二次零散取物时，周宁从01回到04，主角最后进入02。\n唐岚一直在公共侧。封门后，她说门外也拉不开，公共窗无人回应。完整夜间行踪不是主角亲眼所见。',
+ wall:'三号房的许达敲了两下墙，并得到主角回应。\n没有精确死亡时间，也不能据此认定后续一直安全。'
 };
 const L=(who,text,emotion='neutral',note='')=>({who,text,emotion,note});
 const C=(label,to,patch={},confirm='')=>({label,to,patch,confirm});
 const STORY={};
 function node(id,scene,time,location,lines,next,extra={}){STORY[id]={id,scene,time,location,lines,next,...extra};}
-node('arrival','corridor','18:40','旧院 · 门内',[
- L('narrator','手机里最后一条消息停在十七分钟前。司机说，回程路已经封了。'),
- L('narrator','交接会原定今天下午。接驳车送完最后一批人，现在回不来。沿岸巡查告示的照片，还留在你的手机里。'),
+node('arrival','corridor','18:40','旧院 · 门内',s=>[
+ ...(s.version<5?[L('narrator','手机里最后一条消息停在十七分钟前。司机说，回程路已经封了。'),L('narrator','交接会原定今天下午。接驳车送完最后一批人，现在回不来。沿岸巡查告示的照片，还留在你的手机里。')]:[L('narrator','交接会没有开始。食堂里的人声传过来，门边的箱子还没搬完。')]),
  L('xu','先别出去。车过不来，人也别往水里走。'),
- L('yin','十八年前，我从这里离开时九岁。母亲把我交给船上的人，说她再去看一眼。','tense','心声'),
- L('narrator','邀请函背面，有一行不属于公文的字。'),
- L('document','名单不止一份。你毁掉的，只是带回家的那一页。'),
- L('yin','十九岁那年，我烧过一页名单。顾原的名字被划掉，下面添了沈禾。签名是林秀，我母亲。','tense','心声'),
- L('yin','我当时以为，只要那页纸没有了，别人记住的就仍然是她回去救人的样子。','tense','心声'),
+ ...(s.version<5?[L('yin','十八年前，我从这里离开时九岁。母亲把我交给船上的人，说她再去看一眼。','tense','心声'),L('narrator','邀请函背面，有一行不属于公文的字。'),L('document','名单不止一份。你毁掉的，只是带回家的那一页。'),L('yin','十九岁那年，我烧过一页名单。顾原的名字被划掉，下面添了沈禾。签名是林秀，我母亲。','tense','心声'),L('yin','我当时以为，只要那页纸没有了，别人记住的就仍然是她回去救人的样子。','tense','心声')]:[L('yin','我以为只要找到那一页，就知道该怎么问。可我连第一句话都没想好。','tense','心声'),L('narrator','来信折在包内。你没有再把它拿出来。')]),
  L('narrator','拇指碰到包上的噜噜挂件。那张笑脸被捏歪了一点，又慢慢鼓回来。'),
  L('xu','姑娘，门口别站着。后头还有箱子。'),
  L('narrator','他的袖口缠着绷带。箱角湿了，手指却一直压着上面那张清单。')
@@ -152,7 +161,7 @@ node('tryExit','corridor','19:20','公共厅 · 初步求生',[
 node('hub','corridor','19:20','公共厅 · 两个调查时段',s=>[L('yin',s.visits.length?'还有一件事，我不愿只听别人解释。':'在表决前，确认两件我不愿只听别人解释的事。','neutral','心声')],null,{type:'hub'});
 node('A','archive','调查时段','档案室 · 桌面',[L('narrator','灯照在登记册的中缝。纸边比封皮干净，有人最近才把它翻出来。')],null,{type:'hotspots',spots:['sheet','observation','drawer'],after:'Aend'});
 node('Aend','archive','调查时段','档案室 · 梁照在门口',s=>[
- L('yin',s.visits.indexOf('B')>=0?'这和许达说的能对上，但还不是独立证明他后来的每一步。':'笔迹是她的。字尾向上一勾，像写完还要赶着做下一件事。','tense','心声'),L('yin','我烧掉的不是所有副本。我也不能因此假装自己没有烧过。','tense','心声'),L('liang','拍一张？我不碰原件。'),L('yin','先拍页码和背面。只拍划掉的名字，什么都解释不了。'),L('liang','你比上一位愿意让我拍档案的人谨慎。'),L('yin','你上一位拍的是谁？'),L('liang','许达。他说我少写了一半。')
+ L('yin',s.visits.indexOf('B')>=0?'这和许达说的能对上，但还不是独立证明他后来的每一步。':'笔迹是她的。字尾向上一勾，像写完还要赶着做下一件事。','tense','心声'),...(s.version<5?[L('yin','我烧掉的不是所有副本。我也不能因此假装自己没有烧过。','tense','心声')]:[]),L('liang','拍一张？我不碰原件。'),L('yin','先拍页码和背面。只拍划掉的名字，什么都解释不了。'),L('liang','你比上一位愿意让我拍档案的人谨慎。'),L('yin','你上一位拍的是谁？'),L('liang','许达。他说我少写了一半。')
 ],null,{choices:[C('我先保管，讨论时再决定怎么展示。','finishA',{photo:false}),C('你拍完整，但暂时不要替它下结论。','finishA',{photo:true})]});
 node('finishA','archive','调查时段','档案室',s=>[L('narrator',s.photo?'梁照拍下页码、正反两面。原件仍留在你的文件夹里。':'梁照退开了。你将两份原件按页码收好。')],s=>s.visits.length>=2&&s.version>=5?'deepInterview':s.visits.length>=2?'discussion':'hub');
 node('B','corridor','调查时段','走廊 · 三号对面的长椅',s=>[
@@ -175,8 +184,8 @@ node('Dend','corridor','调查时段','走廊尽头 · 旧图',[
 node('Ddirection','corridor','调查时段','走廊尽头',[L('narrator','他在旧图上指出院墙另一侧。你记了位置，没有把“方向”当成“已经能走的路”。'),L('gu','我儿子当年就在这儿。你们能出去，我不拦着。'),L('yin','“不拦着”和“帮忙”，他说的是前一句。','neutral','心声')],s=>s.visits.length>=2&&s.version>=5?'deepInterview':s.visits.length>=2?'discussion':'hub',{gain:['direction']});
 node('Dpublic','corridor','调查时段','走廊尽头',[L('narrator','你要求他回到公共桌前说明换锁的事。他把钥匙收回去。'),L('gu','我儿子当年就在这儿。你们能出去，我不拦着。'),L('yin','“不拦着”和“帮忙”，他说的是前一句。','neutral','心声')],s=>s.visits.length>=2&&s.version>=5?'deepInterview':s.visits.length>=2?'discussion':'hub');
 node('deepInterview','corridor','19:40','公共厅 · 私下深访',[
- L('narrator','两处调查已经结束。离公开讨论还有一点时间。你想起这几天里，几个人始终把某句话咽了回去。'),
- L('yin','只能找一个人单独谈。不是为了替谁定罪，我只是想知道他们不愿在桌边说的那一部分。','tense','心声')
+ L('narrator','公开讨论前，你还来得及单独问一个人。你想起那几句被咽回去的话。'),
+ L('yin','我不想让他们在桌边说给所有人听。','tense','心声')
 ],null,{type:'deepInterview',choices:s=>[
  C('许达：收钱与折返之间，他究竟怎么想。','deepXu',{interview:'xu'}),
  C('周宁：她如何看待父亲，以及身份会带来的影响。','deepNing',{interview:'ning'}),
@@ -234,7 +243,7 @@ node('returning','corridor','20:10','公共厅 · 不要全散开',[
  L('tang','先别散。许达，把门口那张长凳拖来。'),L('narrator','长凳真被拖到了走廊口。唐岚留在凳边计数：门开着，进去一批，再换人。大家没有决定各自回去睡。'),L('zhou','我得取药。她跟我一起看，其他人先等着。'),L('ning','门别碰。我拿完就出来。'),L('chen','沈禾，我跟你——'),L('shen','我自己拿包。你就在这儿，好不好？'),L('narrator','先进去的人又出来了一次，带回药盒、椅垫和水杯。门可以推开。唐岚允许第二批过去。'),L('yin','我想把邀请函上那句话收起来。只要一小会儿，不让别人从我肩上看。','tense','心声'),L('narrator','你先往自己的门口走。周宁又被父亲叫到01核对药袋，随后举着药盒出来，回04拿笔记本。'),L('narrator','陈素由05门边回06取药，许达在03查货物签单。梁照朝08走，顾秋生提着钥匙往09的方向去。'),L('liang','文件夹我放下就出来。别让人替我拿。'),L('tang','先回来一个。别全——','tense'),L('narrator','你最后跨进02。唐岚还在公共侧。门框的灯变了颜色。'),L('tang','别拿了，先——','tense'),L('sound','走廊接连传来闭锁声。有人喊自己还没关门。')
 ],'locked',{blocking:true});
 node('locked','room','20:20','02号房 · 门内',s=>[
- L('narrator',s.mode==='P1'?'你把文件夹放在床边。交给梁照的两份原件，已经不在里面。':s.mode==='P2'?'你把文件夹放在床边。两份原件仍留在公共桌上。':'你把文件夹放在床边，通信仍然不可用。'),L('narrator','刚才试过的内侧把手，此刻只能转到一半。'),L('yin','门开不了。有人在走廊吗？','tense'),L('tang','我还在外面。这里也拉不开。先离门远一点。','tense','门外'),L('narrator','你把文件夹边缘塞进缝里，纸板先折断了。'),L('ning','我们能听见。别用肩膀硬撞。有人受伤就说。','tense','远处'),L('narrator','约好的五分钟过去了。门没有再开。唐岚的声音移远、停下，又返回。你看不见她经过哪里。'),L('tang','公共窗还是没人应。原来的开门钮不管用了，我再找那张图。你们先应一声。','tense','门外')
+ L('narrator',s.mode==='P1'?'你把文件夹放在床边。交给梁照的两份原件，已经不在里面。':s.mode==='P2'?'你把文件夹放在床边。两份原件仍留在公共桌上。':'你把文件夹放在床边，通信仍然不可用。'),L('narrator','刚才试过的内侧把手，此刻只能转到一半。'),L('yin',s.version<5?'门开不了。有人在走廊吗？':'有人在走廊吗？','tense'),L('tang','我还在外面。这里也拉不开。先离门远一点。','tense','门外'),L('narrator','你把文件夹边缘塞进缝里，纸板先折断了。'),L('ning','我们能听见。别用肩膀硬撞。有人受伤就说。','tense','远处'),L('narrator',s.version<5?'约好的五分钟过去了。门没有再开。唐岚的声音移远、停下，又返回。你看不见她经过哪里。':'五分钟过去。唐岚的声音移远、停下，又返回。你看不见她经过哪里。'),L('tang','公共窗还是没人应。原来的开门钮不管用了，我再找那张图。你们先应一声。','tense','门外')
 ],'wall');
 node('wall','room','夜间','02号房 · 与03相邻的墙',s=>[
  L('sound','右侧隔墙传来两下敲击。'),L('xu',s.visits.includes('B')?'隔壁的，睡了没有？':'旁边有人吧？我是刚才搬箱子的。','neutral','隔墙')
@@ -242,7 +251,7 @@ node('wall','room','夜间','02号房 · 与03相邻的墙',s=>[
 node('wallYes','room','夜间','02号房',[L('xu','行。我就问一句。','neutral','隔墙')],'query',{gain:['wall']});
 node('wallNo','room','夜间','02号房',[L('narrator','那边等了一会儿，挪开了椅子。你不能确定他是不是听见了你的脚步。')],'query');
 node('query','room','夜间','02号房 · 核验终端',[L('narrator','终端上有八个名字。最下面不是名字，是“本夜放弃”。'),L('yin','我只能查一个。知道身份之后，剩下的事情不会替我做完。','tense','心声')],null,{type:'query'});
-node('night','room','夜间','02号房 · 指令封存',[L('broadcast','本轮夜间指令已封存。请等待开门。'),L('narrator','灯还亮着。你看了一次规则，又看了一次。两张纸上的字没有变。'),L('sound','雨声一直没有停。')],s=>s.query?'receipt':'morning',{night:true});
+node('night','room','夜间','02号房 · 指令封存',s=>[L('broadcast','本轮夜间指令已封存。请等待开门。'),L('narrator',s.version<5?'灯还亮着。你看了一次规则，又看了一次。两张纸上的字没有变。':'你把规则看了两遍。纸上的字没有变。'),L('sound','雨声一直没有停。')],s=>s.query?'receipt':'morning',{night:true});
 node('receipt','room','次日 06:00','02号房 · 开门前',s=>[L('document',`核验对象：${PEOPLE[s.query].name}\n本轮身份：${queryResult(s.query)}\n对应本夜封存时点。`),L('yin','这张回执只在我手里。它确认的是本次身份，不是旧案的答案。','tense','心声')],'morning',{receipt:true});
 node('morning','corridor','次日 06:10','病房翼 · 开门',[L('sound','门锁依次打开。')],s=>s.mode==='P0'?'E1':s.mode==='P1'?'E2':'E3',{morning:true});
 node('E1','corridor','次日 06:10','03号房 · 门口',[
@@ -461,14 +470,14 @@ node('homeCheck','home','第二天 · 09:20','家中 · 电话与工作记录',[
  L('yin','纸背面的字是谁写的？'),
  L('narrator','对方停了一下，让你说具体一点。你没有把那句话读出来，只问，寄出的函件是否都附了手写说明。'),
  L('narrator','回答是：经手寄送的不止一个人，这边无法确认。你追问个人联系方式，没有得到答复。'),
- L('yin','这通电话只能确认有人在接洽清点。它解释不了那行字，也证明不了写信的人是谁。','tense','心声'),
- L('narrator','通话结束，你在纸上分成两栏。左边写“已确认的安排”，右边写“仍未确认的留言”。'),
+ L('yin','至少，清点安排是真的。写信的人是谁，还是没有答案。','tense','心声'),
+ L('narrator','通话结束，你记下清点时间；留言的来处仍空着。'),
  L('narrator','回复邮件已经打开。光标停在空白处，你还没写自己会不会到场。')
 ],null,{choices:[C('先写：需要提前看到材料目录。','homeAskCatalog',{homeApproach:'catalog'}),C('先写：希望核对林秀经手的记录。','homeAskMother',{homeApproach:'mother'})]});
 node('homeAskCatalog','home','第二天 · 09:35','家中 · 回复草稿',[
  L('narrator','你列下页数、受损情况、能否提前提供扫描件，又在最后加了一句：请说明转运登记材料是否包含副页。'),
  L('yin','写到“副页”的时候，还是停了一下。问得太具体，会不会让那个人知道我在找什么？','tense','心声'),
- L('narrator','你保留了这句话。职业用语可以让邮件显得平静，不能替你决定要不要面对那张纸。')
+ L('narrator','你没有删掉“副页”两个字。')
 ],'homeReply');
 node('homeAskMother','home','第二天 · 09:35','家中 · 回复草稿',[
  L('narrator','你先写下“林秀”，再补上她的岗位。光标停在姓名后，没有继续写你们的关系。'),
@@ -477,7 +486,6 @@ node('homeAskMother','home','第二天 · 09:35','家中 · 回复草稿',[
 ],'homeReply');
 node('homeReply','home','第二天 · 12:40','家中 · 收到回复',[
  L('narrator','午饭后，回复到了。现有材料仍按箱封存，暂时没有可提供的扫描件；登记记录需到场核对，是否完整不能预先保证。'),
- L('narrator','背面的留言，仍然没有人解释。你把回复从头读了一遍，没有发现对方保证过名单副页一定还在。'),
  L('yin','我可以让别的修复师去，或者只要求书面材料。这样，今天就可以继续做别的工作。','neutral','心声'),
  L('narrator','你合上电脑。桌上的照片还没收，母亲的袖口仍折着。过了一会儿，你又把电脑打开。'),
  L('yin','如果还有其他页，我想亲眼看见。也许会看见我不愿认的东西。但这次不能先替它选一个结局。','tense','心声'),
@@ -487,7 +495,7 @@ node('homeDecision','home','出发当天 · 10:30','家中 · 装好肩包',s=>[
  L('narrator','两天后，你给台灯下那张旧信做完最后的检查，交给来取件的人。门关上，房间安静下来。'),
  L('narrator','肩包摊在椅子上。你放进铅笔、记录表、文件夹和充电宝，给母亲的照片另套了一层保护纸。'),
  L('yin',s.homeApproach==='mother'?'我已经在邮件里问过林秀。到现场，就从经她手的登记开始核对。':'我在邮件里要过目录。到现场，先记清材料有哪些，再找名单的其他页。','neutral','心声'),
- L('narrator','你没有带上整个遗物盒。那个缺了一页的纸袋仍留在家里，装进包的是保护好的照片和这次来信。'),
+ L('narrator','遗物盒留在书柜里。你只带上照片和这封信。'),
  L('narrator','天气预报里开始有降雨提醒。此刻接驳没有取消，你多放了一把伞，也留好接车号码。'),
  L('narrator','门边的钥匙和噜噜挂件碰了一下。你将挂件转到包外，摸了摸拉链。'),
  L('yin','记录表，电话，车次。还缺什么？','neutral','心声')
@@ -561,10 +569,10 @@ for(const n of Object.values(STORY))if(['home','journey'].includes(n.scene)){n.n
 STORY.hospitalApproach.prologue=true;
 
 function queryResult(id){return ['zhou','shen'].includes(id)?'夜行者':'非夜行者';}
-if(typeof module!=='undefined')module.exports={PEOPLE,RULES,EVIDENCE,STORY,queryResult};
-</script><script>(function(root,factory){if(typeof module==='object'&&module.exports){const d=require('./story.js');module.exports=factory(d);}else root.Ferry=factory({STORY,PEOPLE,EVIDENCE,RULES,queryResult});})(typeof window!=='undefined'?window:globalThis,function(D){
+if(typeof module!=='undefined')module.exports={PEOPLE,RULES,EVIDENCE,LEGACY_EVIDENCE_TEXT,STORY,queryResult};
+</script><script>(function(root,factory){if(typeof module==='object'&&module.exports){const d=require('./story.js');module.exports=factory(d);}else root.Ferry=factory({STORY,PEOPLE,EVIDENCE,LEGACY_EVIDENCE_TEXT,RULES,queryResult});})(typeof window!=='undefined'?window:globalThis,function(D){
 'use strict';
-const {STORY,PEOPLE,EVIDENCE,queryResult}=D;
+const {STORY,PEOPLE,EVIDENCE,LEGACY_EVIDENCE_TEXT,queryResult}=D;
 const others=Object.keys(PEOPLE).filter(k=>k!=='yin');
 const investigations={A:['档案室','对照纸上的名字与时间'],B:['走廊长椅','听许达把话说完'],C:['医药柜边','问周宁如何看待父亲'],D:['走廊尽头','检查门、窗与钥匙']};
 const doors={push:'你试着推门。门框传来实响，门没有打开。',call:'你朝外呼救。雨声盖住远处，没有人回应。',message:'求救消息仍停在待发送栏。手机没有恢复通信。'};
@@ -628,7 +636,7 @@ function step(s,a){
   if(n.type==='hotspots'&&n.spots.includes(a.key)){
    if(s.inspected.includes(a.key))return s;
    s.inspected.push(a.key);if(!s.evidence.includes(a.key))s.evidence.push(a.key);
-   s.history.push({who:'document',text:EVIDENCE[a.key].name+'\n'+EVIDENCE[a.key].text,time:time(s),place:n.location,note:'已查看'});
+   s.history.push({who:'document',text:EVIDENCE[a.key].name+'\n'+evidence(s,a.key).text,time:time(s),place:n.location,note:'已查看'});
   }else if(n.type==='doorchecks'&&Object.hasOwn(doors,a.key)){
    if(s.doorChecks.includes(a.key))return s;
    s.doorChecks.push(a.key);s.history.push({who:'narrator',text:doors[a.key],time:time(s),place:n.location,note:'实际尝试'});
@@ -662,7 +670,7 @@ function newGameFrom(s){
 }
 function roomOf(s,id){return String(id==='yin'?s.room:id==='ning'?(s.room===2?4:2):PEOPLE[id].room).padStart(2,'0');}
 function location(s){return STORY[s.node].location.replace(/02号房/g,roomOf(s,'yin')+'号房');}
-function evidence(s,key){const e=EVIDENCE[key];if(s.version>=4&&key==='letter')return {...e,source:'三天前在家收到／邀请函背面'};if(s.version>=4&&key==='handover')return {...e,source:'三天前在家收到／函件正面与联络记录'};if(key==='wall')return {...e,source:e.source.replace('02房',roomOf(s,'yin')+'房')};if(key!=='seal')return e;return {...e,text:e.text.replace('周宁从01回到04，主角最后进入02',`周宁从01回到${roomOf(s,'ning')}，主角最后进入${roomOf(s,'yin')}`)};}
+function evidence(s,key){const e=EVIDENCE[key],text=s.version<5&&LEGACY_EVIDENCE_TEXT[key]?LEGACY_EVIDENCE_TEXT[key]:e.text;if(s.version>=4&&key==='letter')return {...e,text,source:'三天前在家收到／邀请函背面'};if(s.version>=4&&key==='handover')return {...e,text,source:'三天前在家收到／函件正面与联络记录'};if(key==='wall')return {...e,text,source:e.source.replace('02房',roomOf(s,'yin')+'房')};if(key!=='seal')return {...e,text};return {...e,text:text.replace('周宁从01回到04，主角最后进入02',`周宁从01回到${roomOf(s,'ning')}，主角最后进入${roomOf(s,'yin')}`)};}
 function roleOf(s,id){return id==='yin'?s.role:id==='ning'?(s.role==='verifier'?'ordinary':'verifier'):['zhou','shen'].includes(id)?'nightwalker':id==='chen'?'guardian':'ordinary';}
 function ownership(s,key){if(['sheet','observation'].includes(key)){if(s.mode==='P1')return s.morning?'08号房，等待共同核对':'梁照保管；你保留笔记';if(s.mode==='P2')return '公共桌，所有人可抄录';return s.photo?'你持原件；梁照有完整照片':'你保管原件';}if(key==='testimony')return s.mode==='P2'?(s.consent?'已获许可，已完整公开':'已公开；违背保密承诺'):s.consent?'你持笔记；已获公开许可':'你持私人笔记；承诺保密';return '你的记录';}
 function endingFacts(s){return [
@@ -782,8 +790,8 @@ if(typeof module!=='undefined')module.exports={create,SCORES};else root.FerryMus
 const $=id=>document.getElementById(id);
 const SAVE_KEY='last-ferry.chapter1.demo.v1';
 const PREF_KEY='last-ferry.chapter1.preferences.v1';
-const MUSIC_DEFAULT_KEY='last-ferry.music-default-on.v2';
-let state=null,saved=null,toastTimer=0,lastActionAt=0,lastScene='',lastActors='',audioOn=false,audioRunning=false,audioNeedsGesture=false,music;
+const MUSIC_DEFAULT_KEY='last-ferry.music-default-on.v3';
+let state=null,saved=null,toastTimer=0,lastActionAt=0,lastScene='',lastActors='',audioOn=false,audioRunning=false,audioNeedsGesture=false,audioStarting=false,music;
 let prefs={large:false,reduced:false,voiceURI:'',speechRate:1,speechVolume:.9,narration:true,musicEnabled:true,musicVolume:.48,rainVolume:.16};
 try{const p=JSON.parse(localStorage.getItem(PREF_KEY)||'null');if(p&&typeof p==='object')prefs={large:p.large===true,reduced:p.reduced===true,voiceURI:typeof p.voiceURI==='string'?p.voiceURI:'',speechRate:[.85,1,1.15].includes(p.speechRate)?p.speechRate:1,speechVolume:Number.isFinite(p.speechVolume)?Math.max(0,Math.min(1,p.speechVolume)):.9,narration:p.narration!==false,musicEnabled:p.musicEnabled!==false,musicVolume:Number.isFinite(p.musicVolume)?Math.max(0,Math.min(1,p.musicVolume)):.48,rainVolume:Number.isFinite(p.rainVolume)?Math.max(0,Math.min(1,p.rainVolume)):.16};}catch{}
 try{if(localStorage.getItem(MUSIC_DEFAULT_KEY)!=='done'){prefs.musicEnabled=true;localStorage.setItem(MUSIC_DEFAULT_KEY,'done');}}catch{}
@@ -795,7 +803,7 @@ function button(label,fn,cls=''){const b=el('button',label,cls);b.type='button';
 function toast(message){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,4200);}
 function refreshSaved(){try{const raw=localStorage.getItem(SAVE_KEY);saved=raw?Ferry.restore(raw):null;}catch{saved=null;}$('resume').hidden=!saved;$('begin').textContent=saved?'重新走进旧院 →':'走进旧院 →';}
 function save(){if(!state)return;try{localStorage.setItem(SAVE_KEY,Ferry.serialize(state));saved=state;$('saveStatus').textContent='● 已自动保存';$('saveStatus').className='save-status';}catch{$('saveStatus').textContent='未能保存 · 请导出存档';$('saveStatus').className='save-status warning';}}
-function openCurrent(){voice.reset();lastScene='';lastActors='';$('cover').hidden=true;$('game').hidden=false;save();render();if(audioOn)startAudio().catch(audioFailure);window.scrollTo(0,0);}
+function openCurrent(){voice.reset();lastScene='';lastActors='';$('cover').hidden=true;$('game').hidden=false;save();render();if(audioOn)startAudio().catch(markAudioPending);window.scrollTo(0,0);}
 function displayModal(title,content){voice.stop();const open=$('modal').open;if(open)$('modalBody').scrollTop=0;$('modalTitle').textContent=title;$('modalBody').replaceChildren(content);if(!open)$('modal').showModal();$('modal').scrollTop=0;}
 function closeModal(){$('modal').close();}
 $('closeModal').onclick=closeModal;
@@ -894,7 +902,7 @@ function act(action,throttle=true){const now=performance.now();if(throttle&&now-
 $('advance').onclick=()=>act({type:'next'});
 function begin(){state=saved?Ferry.newGameFrom(saved):Ferry.fresh();openCurrent();}
 $('begin').onclick=()=>{if(saved)confirmAction('重新开始','这会替换本机的自动存档。你可以先通过“继续”进入，再从存档菜单导出备份。',begin);else begin();};
-$('resume').onclick=()=>{if(!saved)return;try{state=Ferry.restore(Ferry.serialize(saved));voice.reset();lastScene='';lastActors='';$('cover').hidden=true;$('game').hidden=false;render();if(audioOn)startAudio().catch(audioFailure);window.scrollTo(0,0);}catch{toast('存档无法读取，请导入备份或重新开始。');}};
+$('resume').onclick=()=>{if(!saved)return;try{state=Ferry.restore(Ferry.serialize(saved));voice.reset();lastScene='';lastActors='';$('cover').hidden=true;$('game').hidden=false;render();if(audioOn)startAudio().catch(markAudioPending);window.scrollTo(0,0);}catch{toast('存档无法读取，请导入备份或重新开始。');}};
 function toTitle(){voice.stop();save();$('game').hidden=true;$('cover').hidden=false;music.setScene('title');music.setRain(prefs.rainVolume);refreshSaved();window.scrollTo(0,0);}
 $('toTitle').onclick=toTitle;
 function openEvidence(key,fromScene=false){const b=el('div');if(key==='receipt'){
@@ -938,14 +946,15 @@ music=FerryMusic.create({changed(info){audioRunning=info.running;$('coverMusic')
  async function startAudio(){music.setScene($('game').hidden?'title':'game');await music.enable();}
  function stopAudio(){music.disable();}
  function audioFailure(){audioOn=false;prefs.musicEnabled=false;applyPrefs();music.disable();toast('声音暂未播放，请轻触音乐按钮再试一次。');}
+ function markAudioPending(){if(!audioOn)return;audioNeedsGesture=true;$('coverMusic').textContent='♫ 音乐默认开启';$('coverMusic').setAttribute('aria-pressed','true');$('musicStatus').textContent='首次轻触页面后开始播放';}
  function soundEffect(text){music.effect(text);}
  $('coverMusic').onclick=async()=>{if(audioOn&&!audioRunning){audioNeedsGesture=false;try{await startAudio();}catch{audioFailure();}return;}audioOn=!audioOn;prefs.musicEnabled=audioOn;applyPrefs();if(audioOn){try{await startAudio();}catch{audioFailure();}}else stopAudio();};
- function unlockDefaultAudio(e){if(!audioOn||!audioNeedsGesture||e.target===$('coverMusic'))return;audioNeedsGesture=false;startAudio().catch(audioFailure);}
- document.addEventListener('pointerdown',unlockDefaultAudio,{capture:true});document.addEventListener('keydown',unlockDefaultAudio,{capture:true});
- function tryDefaultAudio(){if(!audioOn)return;startAudio().catch(()=>{audioNeedsGesture=true;$('coverMusic').textContent='♫ 音乐默认开启';$('coverMusic').setAttribute('aria-pressed','true');$('musicStatus').textContent='首次轻触页面后开始播放';});}
- document.addEventListener('visibilitychange',()=>{if(document.hidden){voice.stop();save();}music.visibility(document.hidden).catch(audioFailure);});
+ function unlockDefaultAudio(e){if(!audioOn||audioRunning||audioStarting||e.target===$('coverMusic'))return;audioNeedsGesture=false;audioStarting=true;startAudio().catch(markAudioPending).finally(()=>{audioStarting=false;});}
+ document.addEventListener('pointerdown',unlockDefaultAudio,{capture:true});document.addEventListener('touchstart',unlockDefaultAudio,{capture:true});document.addEventListener('click',unlockDefaultAudio,{capture:true});document.addEventListener('keydown',unlockDefaultAudio,{capture:true});
+ function tryDefaultAudio(){if(!audioOn)return;audioNeedsGesture=true;audioStarting=true;startAudio().then(()=>{audioNeedsGesture=false;}).catch(markAudioPending).finally(()=>{audioStarting=false;});}
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){voice.stop();save();}music.visibility(document.hidden).catch(markAudioPending);});
  window.addEventListener('pagehide',()=>{voice.stop();save();music.visibility(true);});
- window.addEventListener('pageshow',()=>{music.visibility(document.hidden).catch(audioFailure);});
+ window.addEventListener('pageshow',()=>{music.visibility(document.hidden).catch(markAudioPending);});
 document.addEventListener('keydown',e=>{if(e.repeat||$('game').hidden||$('modal').open||['BUTTON','INPUT','SELECT','TEXTAREA','SUMMARY'].includes(e.target.tagName))return;if(e.code==='Space'||e.key==='Enter'){e.preventDefault();if(Ferry.canNext(state))act({type:'next'});}});
 
 const voiceMessages={off:'系统朗读 · 非角色配音',unsupported:'当前浏览器不支持语音',ready:'已开启 · 点重听或继续',starting:'正在准备朗读…',loading:'正在加载中文音色…',speaking:'正在朗读',ended:'本句已读完 · 点击继续',skipped:'本句不朗读', 'no-voice':'未找到中文音色 · 可换浏览器重试',error:'播放未成功 · 点重听重试'};
